@@ -1,0 +1,27 @@
+/* Seletores de Classe por ordem alfabética */
+.row{
+  font-size: 1.02em;
+  background-color: rgba(255, 255, 255, .7);
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0vh;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+/* Animated FadeIn */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.fadeIn {
+  animation-name: fadeIn;
+}

@@ -1,0 +1,28 @@
+/* Seletores de Tags por ordem alfabética */
+footer{
+  text-align: center;
+  position: absolute;
+  padding-top: 30px;
+  padding-bottom: 0vh;
+  width: 100%;
+  background-color: white;
+  color: black;
+  margin-bottom: 0;
+  margin-top: 40vh;
+  position: absolute;
+}
+
+/* Seletores de Classe por ordem alfabética */
+.disabled{
+  color: white;
+  pointer-events: none;
+}
+.icon{
+  height: 40px;
+  width: 40px;
+}
+
+/* Seletores de id por ordem alfabética */
+#socialmedia{
+  text-align: right;
+}

@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* Seletores de Tags por ordem alfabética */
+body{
+  background-image: url('./assets/fundo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+h3{
+  text-align: center;
+}

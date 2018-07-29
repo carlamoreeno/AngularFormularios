@@ -1,0 +1,26 @@
+/* Seletores de Tags por ordem alfabética */
+img{
+  height: 62px;
+  width: 175px;
+  padding-top: 0.5vh;
+  padding-bottom: 1vh;
+}
+nav{
+  background-color: #ffffff;
+}
+nav ul a {
+  color: black;
+  font-size: 1.2em;
+}
+
+/* Seletores de Classe por ordem alfabética */
+.icon{
+  padding-top: 2vh;
+  height: 50px;
+  width: 50px;
+}
+
+/* Seletores de id por ordem alfabética */
+#small{
+  font-size: 0.8em;
+}

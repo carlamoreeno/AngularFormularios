@@ -1,0 +1,9 @@
+/* Seletores de id por ordem alfabética */
+#avisos{
+  color: red;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+#pokemonImg{
+  text-align: center;
+}

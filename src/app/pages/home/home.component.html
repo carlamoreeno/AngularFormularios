@@ -1,0 +1,38 @@
+<div class="animated fadeIn row col s12 offset-s2" id="row1">
+  <h3>Junte-se a nós!</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non est efficitur metus elementum vestibulum et eget sapien.
+    Aliquam bibendum congue feugiat. Nullam non libero orci. Suspendisse tempor mauris efficitur nisi fringilla, vitae aliquet ante dictum.
+    Pellentesque luctus tellus quis sem tincidunt cursus. Mauris a egestas risus. Ut lacinia enim diam, ut faucibus eros sollicitudin eu.
+  </p>
+  <p>Proin mollis risus eget est tempor, sit amet ullamcorper orci condimentum. Nulla facilisi. Nulla in tempus nisl, egestas mattis lorem.
+    Vivamus ut nunc a nunc pretium dignissim. Praesent porttitor, ex ut pellentesque vulputate, lectus est ullamcorper nisl, vel tempus mi dui nec nulla.
+    Nunc consequat est non vestibulum fringilla. Donec lacinia scelerisque lectus, sed placerat diam tempor ac. Fusce tincidunt tristique rhoncus.
+  </p>
+  <p>Nullam sagittis quam sapien, a convallis turpis auctor non. Nunc scelerisque fermentum nulla, et efficitur quam laoreet at.
+    Aliquam vitae justo ornare, bibendum risus quis, blandit metus. Mauris eu urna urna. Maecenas facilisis semper felis et maximus.
+    In nibh est, accumsan ut porta quis, facilisis sed felis. Duis lobortis velit id metus ultricies, varius ullamcorper magna porta.
+  </p>
+  <p>Etiam molestie dictum elit, et lacinia tortor tristique id. Duis condimentum magna in ex congue, vel mattis est dignissim. Quisque malesuada hendrerit aliquet.
+    Pellentesque viverra orci sed dui iaculis luctus. Nam commodo neque ut diam ultricies, eu laoreet leo euismod. Phasellus faucibus ultricies felis, ac lobortis ex lacinia quis.
+    Vivamus tincidunt, eros et pharetra commodo, purus leo lobortis quam, varius scelerisque tellus felis eu odio. Nam nec aliquet dolor. Suspendisse sodales erat ut aliquet facilisis.
+  </p>
+
+  <!-- Botão para Pokemon Aparecer -->
+  <h3 class="truncate"><a class="waves-effect waves-light red darken-4 btn-large" (click)="getPokemon()">Um pokémon incrível que aguarda para ser treinado aparecerá</a></h3>
+
+  <!-- Página do formulário(modal) e botão -->
+  <app-formulario></app-formulario>
+
+</div>
+
+<!-- Cards de Pokemon -->
+<div class="row" id="row2">
+  <div class="col s12 m6 l3" *ngFor="let pokemon of pokemons">
+      <div class="card small center">
+        <div class="card-content black-text">
+          <span class="name card-title">{{pokemon.name}}</span>
+          <img src="{{pokemon.sprites.front_shiny}}">
+      </div>
+    </div>
+  </div>
+</div>

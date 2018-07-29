@@ -1,0 +1,128 @@
+<!-- Botão que abre a modal -->
+<h3><button class="waves-effect waves-light red darken-4 btn-large" (click)="abreModal()">Tornar-se um treinador</button></h3>
+
+<!-- Modal -->
+<div class="modal" materialize="modal" [materializeParams]="[{dismissible: true}]" [materializeActions]="modalActions">
+	<div class="modal-content">
+		<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+			<div class="row">
+
+        	<!-- Campo de nome e sua devida validação -->
+					<div class="input-field col l4 m8 offset-m2 s12">
+						<input id="nome" type="text" name="nome" ngModel required #nome="ngModel">
+						<label for="nome">Nome</label>
+					</div>
+
+          <!-- Campo de idade e sua devida validação -->
+					<div class="input-field col l4 m8 offset-m2 s12">
+						<input id="idade" type="text" name="idade" ngModel required #idade="ngModel" (blur)="checkIdade(idade)">
+						<label for="idade">Idade</label>
+            <div *ngIf="idadeError && idade.touched">
+              <p id="avisos">Idade inválida (não pode ser menor do que 10).</p>
+            </div>
+					</div>
+
+          <!-- Campo de email e sua devida validação -->
+					<div class="input-field col l4 m8 offset-m2 s12">
+						<input id="email" type="text" name="email" ngModel required #email="ngModel">
+						<label for="email">E-mail</label>
+					</div>
+
+          <!-- Campo de número de identificação e sua devida validação -->
+					<div class="input-field col l6 m8 offset-m2 s12">
+						<input id="numId" type="text" name="numId" ngModel required #numId="ngModel" (blur)="checkNumId(numId)">
+						<label for="numId">Número de Identificação</label>
+            <div *ngIf="numIdError && numId.touched">
+              <p id="avisos">Número de Identificação Inválido.</p>
+            </div>
+					</div>
+
+          <!-- Campo de pokémon inicial e sua devida validação -->
+          <div class="input-field col l6 m8 offset-m2 s12">
+            <input id="pokemon" type="text" name="pokemon" ngModel required #pokemon="ngModel" (blur)="checkPokemon(pokemon)">
+            <label for="pokemon">Pokémon Inicial</label>
+            <div *ngIf="pokemonError">
+              <p id="avisos">Pokémon Inválido!</p>
+            </div>
+            <div id="pokemonImg" *ngIf="pokemons">
+              <img [src]="pokemons.sprites.front_default">
+            </div>
+          </div>
+
+          <!-- Validação geral de campos obrigatórios -->
+          <div class="col l10 offset-l3 m8 offset-m2 s12" *ngIf="(nome.invalid && nome.touched) || (idade.invalid && idade.touched) || (email.invalid && email.touched) || (numId.invalid && numId.touched) || (pokemon.invalid && pokemon.touched)">
+            <p id="avisos">Campo(s) obrigatório(s) estão em branco.</p>
+          </div>
+
+          <!-- Regiões Iniciais (radio buttons) e sua devida validação -->
+					<div class="col l6 m8 offset-m2 s12">
+						<p>Região de Início de Jornada</p>
+						<input class="with-gap" id="kantoRI" name="regioesIniciais" type="radio" ngModel value="1" required #regioesIniciais="ngModel">
+            <label for="kantoRI">Kanto</label><br>
+
+						<input class="with-gap" id="johtoRI" name="regioesIniciais" type="radio" ngModel value="2">
+            <label for="johtoRI">Johto</label><br>
+
+						<input class="with-gap" id="hoennRI" name="regioesIniciais" type="radio" ngModel value="3">
+            <label for="hoennRI">Hoenn</label><br>
+
+						<input class="with-gap" id="sinnohRI" name="regioesIniciais" type="radio" ngModel value="4">
+            <label for="sinnohRI">Sinnoh</label><br>
+
+						<input class="with-gap" id="unovaRI" name="regioesIniciais" type="radio" ngModel value="5">
+            <label for="unovaRI">Unova</label><br>
+
+						<input class="with-gap" id="kalosRI" name="regioesIniciais" type="radio" ngModel value="6">
+            <label for="kalosRI">Kalos</label><br>
+
+						<input class="with-gap" id="seviiIslandsRI" name="regioesIniciais" type="radio" ngModel value="7">
+            <label for="seviiIslandsRI">Sevii Islands/Orre/Almia</label><br>
+
+						<input class="with-gap" id="ilhasLaranjaRI" name="regioesIniciais" type="radio" ngModel value="8">
+            <label for="ilhasLaranjaRI">Ilhas Laranja</label><br>
+
+						<input class="with-gap" id="regiaoAlolaRI" name="regioesIniciais" type="radio" ngModel value="9">
+            <label for="regiaoAlolaRI">Região Alola</label><br>
+
+            <div *ngIf="regioesIniciais.invalid">
+              <p id="avisos">Selecione uma região para prosseguir.</p>
+            </div>
+					</div>
+
+          <!-- Regiões futuras (checkboxes) e suas devida validação -->
+					<div class="col l6 m8 offset-m2 s12">
+						<p>Outras regiões por onde pretende se aventurar futuramente</p>
+            <input id="kantoRF" name="regioesFuturas" type="checkbox" ngModel #regioesFuturas="ngModel" [disabled]="regioesIniciais.value==1">
+            <label for="kantoRF">Kanto</label><br>
+
+						<input id="johtoRF" name="regioesFuturas" type="checkbox" [disabled]="regioesIniciais.value==2">
+            <label for="johtoRF">Johto</label><br>
+
+						<input id="hoennRF" name="regioesFuturas" type="checkbox" [disabled]="regioesIniciais.value==3">
+            <label for="hoennRF">Hoenn</label><br>
+
+						<input id="sinnohRF" name="regioesFuturas" type="checkbox" [disabled]="regioesIniciais.value==4">
+            <label for="sinnohRF">Sinnoh</label><br>
+
+						<input id="unovaRF" name="regioesFuturas" type="checkbox" [disabled]="regioesIniciais.value==5">
+            <label for="unovaRF">Unova</label><br>
+
+						<input id="kalosRF" name="regioesFuturas" type="checkbox" [disabled]="regioesIniciais.value==6">
+            <label for="kalosRF">Kalos</label><br>
+
+						<input id="seviiIslandsRF" name="regioesFuturas" type="checkbox" [disabled]="regioesIniciais.value==7">
+            <label for="seviiIslandsRF">Sevii Islands/Orre/Almia</label><br>
+
+						<input id="ilhasLaranjaRF" name="regioesFuturas" type="checkbox" [disabled]="regioesIniciais.value==8">
+            <label for="ilhasLaranjaRF">Ilhas Laranja</label><br>
+
+						<input id="regiaoAlolaRF" name="regioesFuturas" type="checkbox" [disabled]="regioesIniciais.value==9">
+            <label for="regiaoAlolaRF">Região Alola</label><br>
+					</div>
+				</div>
+
+        <!-- Botão de Cadastrar (disabled caso falte alguma validação) -->
+				<h3><button class="waves-effect waves-light red darken-4 btn-large" type="submit" [disabled]="nome.invalid || idadeError || email.invalid || numIdError || pokemonError || regioesIniciais.invalid">Cadastrar</button></h3>
+    </form>
+	</div>
+</div>
