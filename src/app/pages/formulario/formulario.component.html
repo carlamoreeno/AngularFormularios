@@ -37,7 +37,7 @@
             </div>
 					</div>
 
-          <!-- Campo de pokémon inicial e sua devida validação -->
+          <!-- Campo de pokémon inicial e sua devida validação (necessário paciência porque pode demorar um pouco para o pokémon aparecer) -->
           <div class="input-field col l6 m8 offset-m2 s12">
             <input id="pokemon" type="text" name="pokemon" ngModel required #pokemon="ngModel" (blur)="checkPokemon(pokemon)">
             <label for="pokemon">Pokémon Inicial</label>

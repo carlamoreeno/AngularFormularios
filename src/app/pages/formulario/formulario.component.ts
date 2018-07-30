@@ -51,6 +51,7 @@ export class FormularioComponent implements OnInit {
 
   // Validator para garantir que o pokemon inicial existe
   checkPokemon(pokemon){
+    console.log("Entrei na função (O pokémon pode demorar um pouco para aparecer)")
     this.pokemonservice.checkPokemon(pokemon.value).subscribe(
       (res)=>{
         this.pokemons = res;
