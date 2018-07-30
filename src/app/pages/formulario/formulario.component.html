@@ -33,7 +33,7 @@
 						<input id="numId" type="text" name="numId" ngModel required #numId="ngModel" (blur)="checkNumId(numId)">
 						<label for="numId">Número de Identificação</label>
             <div *ngIf="numIdError && numId.touched">
-              <p id="avisos">Número de Identificação Inválido.</p>
+              <p id="avisos">Número de Identificação Inválido (deve conter exatamente 8 dígitos).</p>
             </div>
 					</div>
 
@@ -50,7 +50,7 @@
           </div>
 
           <!-- Validação geral de campos obrigatórios -->
-          <div class="col l10 offset-l3 m8 offset-m2 s12" *ngIf="(nome.invalid && nome.touched) || (idade.invalid && idade.touched) || (email.invalid && email.touched) || (numId.invalid && numId.touched) || (pokemon.invalid && pokemon.touched)">
+          <div class="col l10 offset-l4 m8 offset-m2 s12" *ngIf="(nome.invalid && nome.touched) || (idade.invalid && idade.touched) || (email.invalid && email.touched) || (numId.invalid && numId.touched) || (pokemon.invalid && pokemon.touched)">
             <p id="avisos">Campo(s) obrigatório(s) estão em branco.</p>
           </div>
 

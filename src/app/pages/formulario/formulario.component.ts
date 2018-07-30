@@ -43,7 +43,7 @@ export class FormularioComponent implements OnInit {
 
   // Validator para todo treinador ter mais de 10 anos
   checkIdade(idade){
-    if((idade.value<10)
+    if(idade.value<10)
       this.idadeError = true;
     else
       this.idadeError = false;
