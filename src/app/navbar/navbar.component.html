@@ -2,18 +2,20 @@
   <div class="nav-wrapper">
     <!-- NavBar geral para telas grandes e médias -->
     <a href="#" class="brand-logo center"><img src="./assets/logo.png" alt="logo"></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <ul id="nav-mobile" class="right hide-on-small-only">
       <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
       <li routerLinkActive="active"><a routerLink="/sobre">Sobre nós</a></li>
     </ul>
 
     <!-- NavBar em telas menores -->
-    <ul id="small" class="left hide-on-large-only">
-      <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-    </ul>
-    <ul id="small" class="right hide-on-large-only">
-      <li routerLinkActive="active"><a routerLink="/sobre">Sobre nós</a></li>
-    </ul>
-    
+     <ul class="left hide-on-med-and-up">
+        <li><a materialize="sideNav" [materializeParams]="[{edge:'left',closeOnClick: true}]" data-activates="slide-out" class="button-collapse"><img src="../assets/icons/menu.svg" class="icon" id="small"></a></li>
+     </ul>
   </div>
 </nav>
+
+<ul id="slide-out" class="side-nav fixed hide-on-med-and-up">
+  <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+  <li routerLinkActive="active"><a routerLink="/sobre">Sobre nós</a></li> 
+</ul>
+

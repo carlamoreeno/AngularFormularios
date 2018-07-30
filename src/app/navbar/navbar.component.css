@@ -22,5 +22,6 @@ nav ul a {
 
 /* Seletores de id por ordem alfabética */
 #small{
-  font-size: 0.8em;
+  margin-top: 0vh;
+  margin-left: -6vw;
 }

@@ -18,7 +18,7 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/pokeball.ico"
             ],
             "styles": [
               "./node_modules/materialize-css/dist/css/materialize.css",
@@ -82,7 +82,7 @@
             ],
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/pokeball.ico"
             ]
           }
         },
