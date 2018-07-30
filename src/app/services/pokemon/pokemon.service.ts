@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError,map,tap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
-
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class PokemonService {
 
